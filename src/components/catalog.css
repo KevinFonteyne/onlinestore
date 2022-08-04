@@ -1,0 +1,8 @@
+.catalog .product{
+    display: inline-block;
+    width: 280px;
+    height: 320px;
+    border: 1px solid grey;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
