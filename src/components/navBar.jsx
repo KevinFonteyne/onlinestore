@@ -1,3 +1,5 @@
+import {Link} from 'react-router-dom';
+
 const NavBar = () => {
   return (
     <nav className="navbar bg-light fixed-top">
@@ -8,28 +10,29 @@ const NavBar = () => {
     </button>
     <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div className="offcanvas-header">
-        <h5 className="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+        <h5 className="offcanvas-title" id="offcanvasNavbarLabel">Tech Junkies</h5>
         <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div className="offcanvas-body">
         <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="#">Home</a>
+            <Link className="nav-link active" aria-current="page" to="/">Home</Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">Link</a>
+            <Link className="nav-link" to="/catalog">Catalog</Link>
           </li>
           <li className="nav-item dropdown">
             <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
+              More Options
             </a>
             <ul className="dropdown-menu">
-              <li><a className="dropdown-item" href="#">Action</a></li>
-              <li><a className="dropdown-item" href="#">Another action</a></li>
+              <li><Link className="dropdown-item" to="/list">Shopping List</Link></li>
+              <li><Link className="dropdown-item" to="/about">About us</Link></li>
+              <li><Link className="dropdown-item" to="/admin">Admin</Link></li>
               <li>
                 <hr className="dropdown-divider"/>
               </li>
-              <li><a className="dropdown-item" href="#">Something else here</a></li>
+              <li><Link className="dropdown-item" to="/cart">Cart</Link></li>
             </ul>
           </li>
         </ul>

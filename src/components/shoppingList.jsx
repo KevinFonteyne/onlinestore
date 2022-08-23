@@ -8,7 +8,10 @@ const ShoppingList = () => {
 
   const save = () => {
     console.log(text);
-    items.push(text);
+    // items.push(text);
+    let i = [... items];
+    i.push(text);
+    setItems(i);
   };
   const textChange = (e) => {
     let value = e.target.value;
@@ -26,7 +29,7 @@ const ShoppingList = () => {
       </div>
       <ul>
         {items.map((item) => (
-          <li>{item}</li>
+          <li key={item}>{item}</li>
         ))}
       </ul>
     </div>
