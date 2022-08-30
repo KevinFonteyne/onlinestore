@@ -1,3 +1,16 @@
-h1{
-    margin-top: 65px;
+.cart{
+    margin-top: 55px;
 }
+
+.cart .parent{
+    display:flex;
+}
+
+.cart .products{
+    flex: 3;
+}
+
+.cart .side-menu{
+    flex: 1;
+}
+

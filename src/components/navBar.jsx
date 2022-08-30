@@ -1,6 +1,28 @@
+
+
 import {Link} from 'react-router-dom';
+import {useContext} from 'react';
+import StoreContext from "../store/storeContext";
+
+
+
 
 const NavBar = () => {
+  const cart = useContext(StoreContext).cart;
+
+
+  const getNumItems = () =>{
+    let sum = 0;
+    
+    for(let i = 0; i < cart.length; i++){
+      let prod = cart[i];
+      sum += prod.quantity;
+    }
+
+    return sum;
+  }
+
+
   return (
     <nav className="navbar bg-light fixed-top">
   <div className="container-fluid">
@@ -32,7 +54,7 @@ const NavBar = () => {
               <li>
                 <hr className="dropdown-divider"/>
               </li>
-              <li><Link className="dropdown-item" to="/cart">Cart</Link></li>
+              <li><Link className="dropdown-item" to="/cart">{getNumItems()} &nbsp; Cart</Link></li>
             </ul>
           </li>
         </ul>
